@@ -21,5 +21,8 @@
     "label-position": false,
     "no-string-literal": false,
     "jsx-no-lambda": false
+  },
+  "jsRules": {
+    "object-literal-sort-keys": [false]
   }
 }

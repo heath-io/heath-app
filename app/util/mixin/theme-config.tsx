@@ -1,7 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { pink, blue } from '@material-ui/core/colors';
 
+import MuiPaperConfig from './mui-paper';
 import MuiButtonConfig from './mui-button';
+// import AppColor from '@tool/app-color';
 
 // 自定义 material-ui 主题样式
 const ThemeConfig = createMuiTheme({
@@ -24,6 +26,7 @@ const ThemeConfig = createMuiTheme({
 
   overrides: {
     ...MuiButtonConfig,
+    ...MuiPaperConfig,
 
     // override MuiTab
     MuiTab: {
@@ -50,14 +53,6 @@ const ThemeConfig = createMuiTheme({
       root: {
         width: '100%',
         background: '#eee',
-      },
-    },
-    MuiPaper: {
-      root: {
-        display: 'flex',
-        flexDirection: 'column',
-        color: '#000',
-        backgroundColor: '#eee',
       },
     },
 
