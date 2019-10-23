@@ -1,0 +1,30 @@
+@import './color.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: $c000;
+  background-color: $fff;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  // touch-action: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+::selection {
+  background-color: $c333;
+  color: $fff;
+}
