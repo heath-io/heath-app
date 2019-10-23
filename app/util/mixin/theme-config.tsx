@@ -1,6 +1,8 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { pink, blue } from '@material-ui/core/colors';
 
+import MuiButtonConfig from './mui-button';
+
 // 自定义 material-ui 主题样式
 const ThemeConfig = createMuiTheme({
   // 改变 material-ui 主色
@@ -21,15 +23,9 @@ const ThemeConfig = createMuiTheme({
   },
 
   overrides: {
-    MuiButton: {
-      root: {
-        fontSize: '14px',
-      },
-      label: {
-        textTransform: 'none', // capitalize
-      },
-    },
-    // 改变 Tab 的样式
+    ...MuiButtonConfig,
+
+    // override MuiTab
     MuiTab: {
       root: {
         fontSize: '14px',
@@ -60,12 +56,12 @@ const ThemeConfig = createMuiTheme({
       root: {
         display: 'flex',
         flexDirection: 'column',
-        color: '#fff',
-        backgroundColor: '#000',
+        color: '#000',
+        backgroundColor: '#eee',
       },
     },
 
-    // change bottomNavigation styles
+    // override MuiBottomNavigation
     MuiBottomNavigation: {
       root: {
         position: 'fixed',
@@ -89,7 +85,7 @@ const ThemeConfig = createMuiTheme({
       },
     },
 
-    // change app-bar styles
+    // override MuiToolbar
     MuiToolbar: {
       regular: {
         height: '50px',

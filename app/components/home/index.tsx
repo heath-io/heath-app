@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import { Button, Paper } from '@material-ui/core';
+
+import LeftBar from '@con/left-bar';
 
 interface IProps {};
 interface IState {};
@@ -12,7 +14,10 @@ const Home = (props: IProps, state: IState) => {
   });
 
   return (
-    <div>
+    <Paper square={true}>
+
+      <LeftBar />
+
       <ul>
         <li>
           <p>Home Page33</p>
@@ -30,10 +35,16 @@ const Home = (props: IProps, state: IState) => {
           <Button variant="contained" color="primary">Primary Button</Button>
         </li>
         <li>
+          <p>hello</p>
+        </li>
+        <li>
           <Button variant="contained" color="secondary">出淤泥而不染</Button>
         </li>
+        <li>
+          <p>End</p>
+        </li>
       </ul>
-    </div>
+    </Paper>
   )
 }
 
