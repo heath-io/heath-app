@@ -13,8 +13,8 @@ module.exports = {
   appCommonScss: resolveApp('app/common/scss'),
   appCommonStore: resolveApp('app/common/store'),
   appCommonStyled: resolveApp('app/common/styled'),
-  appComponents: resolveApp('app/components'),
-  appContainer: resolveApp('app/container'),
+  appComp: resolveApp('app/components'),
+  appCon: resolveApp('app/container'),
   appScss: resolveApp('app/scss'),
   appStore: resolveApp('app/store'),
   appUtil: resolveApp('app/util'),
@@ -22,5 +22,5 @@ module.exports = {
   appMixin: resolveApp('app/util/mixin'),
   appStatic: resolveApp('app/static'),
   appImage: resolveApp('app/static/image'),
-  appPicture: resolveApp('app/static/picture'),
+  appIcon: resolveApp('app/static/icon'),
 };

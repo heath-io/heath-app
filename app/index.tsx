@@ -2,21 +2,23 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import AppRoot from '@comp/common/app-root';
+import AppTheme from '@con/app-theme';
 
 render(
   <AppContainer>
-    <AppRoot />
+    <AppTheme />
   </AppContainer>,
   document.getElementById('root'),
 );
 
+// @ts-ignore-block
 if (module.hot) {
-  module.hot.accept('@comp/common/app-root', () => {
-    const AppRoot = require('@comp/common/app-root').default;
+  // @ts-ignore
+  module.hot.accept('@con/app-theme', () => {
+    const AppTheme = require('@con/app-theme').default;
     render(
       <AppContainer>
-        <AppRoot />
+        <AppTheme />
       </AppContainer>,
       document.getElementById('root'),
     );

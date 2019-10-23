@@ -36,7 +36,7 @@
       "@mixin/*": ["app/util/mixin/*"],
       "@static/*": ["app/static/*"],
       "@image/*": ["app/static/image/*"],
-      "@picture/*": ["app/static/picture/*"]
+      "@icon/*": ["app/static/icon/*"]
     }
   },
   "exclude": [

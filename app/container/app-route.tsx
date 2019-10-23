@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import '@commonScss/';
 import Home from '@comp/home';
 import Setting from '@comp/setting';
-import Page404 from '@comp/common/page-404';
+import Page404 from './page-404';
 
 interface IProps {};
 interface IState {};
