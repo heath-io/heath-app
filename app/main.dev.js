@@ -6,7 +6,6 @@
  * When running `yarn build` or `yarn build-main`, this file is compiled to
  * `./app/main.prod.js` using webpack. This gives us some performance wins.
  *
- * @flow
  */
 import { app, BrowserWindow } from 'electron';
 import { autoUpdater } from 'electron-updater';
@@ -49,6 +48,13 @@ const installExtensions = async () => {
  * Add event listeners...
  */
 
+// 第二次触发此事件
+app.on('browser-window-created', (event, win) => {
+  // ...
+});
+
+
+// 第四次触发此事件
 app.on('window-all-closed', () => {
   // Respect the OSX convention of having the application in memory even
   // after all windows have been closed
@@ -57,6 +63,7 @@ app.on('window-all-closed', () => {
   }
 });
 
+// 第一次触发此事件
 app.on('ready', async () => {
   if (
     process.env.NODE_ENV === 'development' ||
@@ -78,6 +85,7 @@ app.on('ready', async () => {
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
+  // 第三次触发此事件
   mainWindow.webContents.on('did-finish-load', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
@@ -90,6 +98,7 @@ app.on('ready', async () => {
     }
   });
 
+  // 最后触发此事件
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
