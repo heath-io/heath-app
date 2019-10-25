@@ -10,6 +10,7 @@
 import { app, BrowserWindow } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+
 import MenuBuilder from './menu';
 
 export default class AppUpdater {
@@ -76,9 +77,17 @@ app.on('ready', async () => {
     // show: false,
     width: 1024,
     height: 728,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration: true,
+      experimentalFeatures: true,
     },
+    title: 'Heath',
+    backgroundColor: '#eee',
+    // frame: false,
+    // transparent : true,
+    // titleBarStyle: 'hidden-inset',
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);

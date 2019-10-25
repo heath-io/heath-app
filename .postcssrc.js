@@ -1,17 +1,8 @@
-module.exports = {
-  // parser: 'sugarss',
-  map: true,
-  indent: 'postcss',
-  plugins: () => [
-    require('postcss-flexbugs-fixes'),
-    autoprefixer({
-      browsers: [
-        '>1%',
-        'last 4 versions',
-        'Firefox ESR',
-        'not ie < 9', // React doesn't support IE8 anyway
-      ],
-      flexbox: 'no-2009',
-    }),
-  ],
-};
+module.exports = (ctx) => ({
+  parser: ctx.parser ? 'sugarss': false,
+  map: ctx.env === 'development' ? ctx.map : false,
+  syntax: 'postcss-scss',
+  plugins: {
+    'postcss-plugin': ctx.options.plugin,
+  },
+});

@@ -16,11 +16,11 @@
     "ordered-imports": [false],
     "object-literal-sort-keys": [false],
     "no-console": [ false ],
-    "no-unused-expression": [true],
     "no-shadowed-variable": false,
     "label-position": false,
     "no-string-literal": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "no-unused-expression": false
   },
   "jsRules": {
     "object-literal-sort-keys": [false]

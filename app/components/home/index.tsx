@@ -10,7 +10,7 @@ interface IState {};
 const Home = (props: IProps, state: IState) => {
 
   useEffect(() => {
-    console.log('home props: ', props);
+    // console.log('home props: ', props);
   });
 
   return (
