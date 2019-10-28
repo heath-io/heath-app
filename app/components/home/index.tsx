@@ -20,9 +20,6 @@ const Home = (props: IProps, state: IState) => {
 
       <ul>
         <li>
-          <p>Home Page33</p>
-        </li>
-        <li>
           <Link to="/setting">Setting Page</Link>
         </li>
         <li>

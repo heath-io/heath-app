@@ -19,7 +19,6 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  // touch-action: none;
   // -webkit-overflow-scrolling: touch;
   // -webkit-user-select: none;
   // -webkit-app-region: drag;
@@ -36,8 +35,8 @@ body {
   top: 0px;
   width: 100%;
   height: 32px;
-  background-color: #000;
-  color: #fff;
+  background-color: $c000;
+  color: $fff;
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
