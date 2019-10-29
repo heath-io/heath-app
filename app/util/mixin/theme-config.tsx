@@ -31,32 +31,32 @@ const ThemeConfig = createMuiTheme({
     ...MuiToolbarConfig,
 
     // override MuiTab
-    MuiTab: {
-      root: {
-        fontSize: '14px',
-        textTransform: 'none',
-      },
-    },
-    MuiAvatar: {
-      root: {
-        width: '30px',
-        height: '30px',
-      },
-    },
-    MuiTypography: {
-      root: {
-        width: '100%',
-        display: 'inline-flex',
-        alignItems: 'center',
-        fontSize: '15px !important',
-      },
-    },
-    MuiDivider: {
-      root: {
-        width: '100%',
-        background: '#eee',
-      },
-    },
+    // MuiTab: {
+    //   root: {
+    //     fontSize: '14px',
+    //     textTransform: 'none',
+    //   },
+    // },
+    // MuiAvatar: {
+    //   root: {
+    //     width: '30px',
+    //     height: '30px',
+    //   },
+    // },
+    // MuiTypography: {
+    //   root: {
+    //     width: '100%',
+    //     display: 'inline-flex',
+    //     alignItems: 'center',
+    //     fontSize: '15px !important',
+    //   },
+    // },
+    // MuiDivider: {
+    //   root: {
+    //     width: '100%',
+    //     background: '#eee',
+    //   },
+    // },
 
   },
 });

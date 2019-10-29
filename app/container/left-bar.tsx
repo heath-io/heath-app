@@ -20,8 +20,13 @@ const store = new Store();
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      zIndex: 1,
-      width: '150px',
+      // zIndex: 1,
+      position: 'fixed',
+      width: '180px',
+      left: 0,
+      top: 0,
+      height: '100vh',
+      overflow: 'auto',
     },
   })
 );
@@ -50,6 +55,12 @@ const LeftBar = (props: IProps, state: IState) => {
         </Button>
       </p>
       <p>Bottom</p>
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((item, index) => (
+        <p key={index} style={{marginTop: '15px'}}>
+          <Button variant="contained" color="primary">顺丰</Button>
+        </p>
+      ))}
+      <p>End......</p>
     </Paper>
   )
 }

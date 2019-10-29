@@ -20,7 +20,12 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'row',
     },
     childPaper: {
-      flex: 1,
+      position: 'fixed',
+      right: 0,
+      top: 0,
+      width: 'calc(100% - 180px)',
+      height: '100vh',
+      overflow: 'auto',
     },
   })
 );
@@ -61,9 +66,12 @@ const Home = (props: IProps, state: IState) => {
           <li>
             <Button variant="contained" color="secondary">出淤泥而不染</Button>
           </li>
-          <li>
-            <p>End</p>
-          </li>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((item, index) => (
+            <p key={index} style={{marginTop: '15px'}}>
+              <Button variant="contained" color="primary">志，当立于青天白云之上，方可不沾染尘埃...</Button>
+            </p>
+          ))}
+          <p>End......</p>
         </ul>
       </Paper>
 
