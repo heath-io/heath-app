@@ -20,6 +20,7 @@ module.exports = {
   appUtil: resolveApp('app/util'),
   appTool: resolveApp('app/util/tools'),
   appMixin: resolveApp('app/util/mixin'),
+  appLib: resolveApp('app/util/lib'),
   appStatic: resolveApp('app/static'),
   appImage: resolveApp('app/static/image'),
   appIcon: resolveApp('app/static/icon'),

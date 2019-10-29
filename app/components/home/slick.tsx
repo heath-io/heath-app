@@ -7,11 +7,9 @@ import {
   Theme,
   createStyles,
 } from '@material-ui/core/styles';
+import Slider from 'react-slick';
 
-// import Gallery from './gallery';
-// import Slick from './slick';
-import ImageFlow from './image-flow';
-import List from './list';
+import AppTool from '@tool/app-tool';
 
 interface IProps extends RouteComponentProps {
   history: any,
@@ -21,14 +19,12 @@ interface IState {};
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      height: '100vh',
-      padding: '66px 10px 10px 10px',
       backgroundColor: '#fff',
     },
   })
 );
 
-const Content = (props: IProps, state: IState) => {
+const Slick = (props: IProps, state: IState) => {
 
   useEffect(() => {
     // console.log('props: ', props);
@@ -39,16 +35,26 @@ const Content = (props: IProps, state: IState) => {
   }, []);
 
   const classes = useStyles();
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoPlay: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
     <Paper square={true}
       className={classes.paperRoot}>
-
-      {/* <Gallery /> */}
-      {/* <Slick /> */}
-      <ImageFlow />
-      <List />
+      <Slider {...settings}>
+        <img src={`${AppTool.serverImage}11.jpg`} alt="11.jpg" />
+        <img src={`${AppTool.serverImage}22.jpg`} alt="11.jpg" />
+        <img src={`${AppTool.serverImage}33.jpg`} alt="11.jpg" />
+        <img src={`${AppTool.serverImage}44.jpg`} alt="11.jpg" />
+        <img src={`${AppTool.serverImage}55.jpg`} alt="11.jpg" />
+      </Slider>
     </Paper>
   )
 }
 
-export default withRouter(observer(Content));
+export default withRouter(observer(Slick));

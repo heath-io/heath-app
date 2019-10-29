@@ -34,6 +34,7 @@
       "@util/*": ["app/util/*"],
       "@tool/*": ["app/util/tools/*"],
       "@mixin/*": ["app/util/mixin/*"],
+      "@lib/*": ["app/util/lib/*"],
       "@static/*": ["app/static/*"],
       "@image/*": ["app/static/image/*"],
       "@icon/*": ["app/static/icon/*"]

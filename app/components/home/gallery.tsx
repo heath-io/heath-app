@@ -7,11 +7,9 @@ import {
   Theme,
   createStyles,
 } from '@material-ui/core/styles';
+import ImageGallery from 'react-image-gallery';
 
-// import Gallery from './gallery';
-// import Slick from './slick';
-import ImageFlow from './image-flow';
-import List from './list';
+import AppTool from '@tool/app-tool';
 
 interface IProps extends RouteComponentProps {
   history: any,
@@ -21,14 +19,21 @@ interface IState {};
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      height: '100vh',
-      padding: '66px 10px 10px 10px',
+      height: '200px',
       backgroundColor: '#fff',
     },
   })
 );
 
-const Content = (props: IProps, state: IState) => {
+const images = [
+  { original: `${AppTool.serverImage}11.jpg` },
+  { original: `${AppTool.serverImage}22.jpg` },
+  { original: `${AppTool.serverImage}33.jpg` },
+  { original: `${AppTool.serverImage}44.jpg` },
+  { original: `${AppTool.serverImage}55.jpg` },
+];
+
+const Gallery = (props: IProps, state: IState) => {
 
   useEffect(() => {
     // console.log('props: ', props);
@@ -42,13 +47,14 @@ const Content = (props: IProps, state: IState) => {
   return (
     <Paper square={true}
       className={classes.paperRoot}>
-
-      {/* <Gallery /> */}
-      {/* <Slick /> */}
-      <ImageFlow />
-      <List />
+      <ImageGallery items={images}
+        showThumbnails={false}
+        showPlayButton={false}
+        showBullets={true}
+        showIndex={true}
+        autoPlay={false} />
     </Paper>
   )
 }
 
-export default withRouter(observer(Content));
+export default withRouter(observer(Gallery));

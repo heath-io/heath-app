@@ -1,1 +1,8 @@
 @import './common.scss';
+
+.slick-dots {
+  bottom: 0;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+}

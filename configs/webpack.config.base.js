@@ -70,6 +70,7 @@ export default {
       '@util': paths.appUtil,
       '@tool': paths.appTool,
       '@mixin': paths.appMixin,
+      '@lib': paths.appLib,
       '@static': paths.appStatic,
       '@image': paths.appImage,
       '@icon': paths.appIcon,

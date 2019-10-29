@@ -7,11 +7,9 @@ import {
   Theme,
   createStyles,
 } from '@material-ui/core/styles';
+import ReactPlayer from 'react-player';
 
-// import Gallery from './gallery';
-// import Slick from './slick';
-import ImageFlow from './image-flow';
-import List from './list';
+import AppTool from '@tool/app-tool';
 
 interface IProps extends RouteComponentProps {
   history: any,
@@ -21,14 +19,13 @@ interface IState {};
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      height: '100vh',
-      padding: '66px 10px 10px 10px',
+      padding: '10px',
       backgroundColor: '#fff',
     },
   })
 );
 
-const Content = (props: IProps, state: IState) => {
+const List = (props: IProps, state: IState) => {
 
   useEffect(() => {
     // console.log('props: ', props);
@@ -42,13 +39,12 @@ const Content = (props: IProps, state: IState) => {
   return (
     <Paper square={true}
       className={classes.paperRoot}>
-
-      {/* <Gallery /> */}
-      {/* <Slick /> */}
-      <ImageFlow />
-      <List />
+      <ReactPlayer url={`${AppTool.serverVideo}01.mp4`}
+        playing={false} controls={true}
+        playsinline={true}
+        width="360px" height="auto" />
     </Paper>
   )
 }
 
-export default withRouter(observer(Content));
+export default withRouter(observer(List));
