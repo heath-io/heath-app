@@ -20,13 +20,18 @@ const store = new Store();
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      // zIndex: 1,
+      zIndex: 1,
       position: 'fixed',
       width: '180px',
       left: 0,
       top: 0,
       height: '100vh',
       overflow: 'auto',
+      padding: '10px',
+    },
+    buttonRoot: {
+      width: '100%',
+      marginTop: '15px',
     },
   })
 );
@@ -42,25 +47,38 @@ const LeftBar = (props: IProps, state: IState) => {
     <Paper square={true}
       className={classes.paperRoot}>
       <p>Hello: {store.count}</p>
-      <p>Count: 11</p>
-      <p>
-        <Button variant="contained" color="primary"
-          onClick={store.increment}>Increment
-        </Button>
-      </p>
-      <p>Hi</p>
-      <p>
-        <Button variant="contained" color="secondary"
-          onClick={store.decrement}>Decrement
-        </Button>
-      </p>
-      <p>Bottom</p>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((item, index) => (
-        <p key={index} style={{marginTop: '15px'}}>
-          <Button variant="contained" color="primary">顺丰</Button>
-        </p>
-      ))}
-      <p>End......</p>
+      <Button variant="contained" color="primary"
+        onClick={store.increment}
+        className={classes.buttonRoot}>首页
+      </Button>
+      <Button variant="contained" color="secondary"
+        onClick={store.decrement}
+        className={classes.buttonRoot}>视频
+      </Button>
+      <Button variant="contained" color="primary"
+        onClick={store.increment}
+        className={classes.buttonRoot}>相册
+      </Button>
+      <Button variant="contained" color="secondary"
+        onClick={store.decrement}
+        className={classes.buttonRoot}>新闻
+      </Button>
+      <Button variant="contained" color="primary"
+        onClick={store.increment}
+        className={classes.buttonRoot}>消息
+      </Button>
+      <Button variant="contained" color="secondary"
+        onClick={store.decrement}
+        className={classes.buttonRoot}>历史记录
+      </Button>
+      <Button variant="contained" color="primary"
+        onClick={store.increment}
+        className={classes.buttonRoot}>收藏
+      </Button>
+      <Button variant="contained" color="secondary"
+        onClick={store.decrement}
+        className={classes.buttonRoot}>设置
+      </Button>
     </Paper>
   )
 }

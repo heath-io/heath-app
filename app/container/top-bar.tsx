@@ -18,8 +18,9 @@ import {
 } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-// import AppColor from '@tool/app-color';
+import AppColor from '@tool/app-color';
 
 interface IProps extends RouteComponentProps {
   history: any,
@@ -37,9 +38,9 @@ const useStyles = makeStyles((theme: Theme) =>
       '&:hover': {
         backgroundColor: fade(theme.palette.common.white, 0.25),
       },
-      marginRight: theme.spacing(2),
+      marginRight: theme.spacing(1),
       marginLeft: 0,
-      width: '280px',
+      width: '230px',
     },
     searchIcon: {
       width: theme.spacing(5),
@@ -57,9 +58,18 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(0.8, 1, 0.8, 5),
       transition: theme.transitions.create('width'),
       width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: 200,
-      },
+    },
+
+    leftBar: {
+      display: 'inline-flex',
+      alignItems: 'center',
+    },
+    rightBar: {
+      display: 'inline-flex',
+      alignItems: 'center',
+    },
+    iconButton: {
+      color: AppColor.fff,
     },
   })
 );
@@ -78,23 +88,31 @@ const TopBar = (props: IProps, state: IState) => {
   return (
     <Paper square={true}
       className={classes.paperRoot}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
-          <IconButton edge="start" color="inherit">
-            <MenuIcon />
-          </IconButton>
-          <Typography>Heath</Typography>
-          <Box className={classes.search}>
-            <Box className={classes.searchIcon}>
-              <SearchIcon />
+          <div className={classes.leftBar}>
+            <IconButton edge="start" color="inherit">
+              <MenuIcon />
+            </IconButton>
+            <Typography>Heath</Typography>
+          </div>
+
+          <div className={classes.rightBar}>
+            <Box className={classes.search}>
+              <p className={classes.searchIcon}>
+                <SearchIcon />
+              </p>
+              <InputBase placeholder="Search..."
+                inputProps={{ 'aria-label': 'search' }}
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }} />
             </Box>
-            <InputBase placeholder="Search..."
-              inputProps={{ 'aria-label': 'search' }}
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }} />
-          </Box>
+            <IconButton className={classes.iconButton}>
+              <AccountCircleIcon />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
     </Paper>
