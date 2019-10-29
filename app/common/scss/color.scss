@@ -65,6 +65,7 @@ $lightGreen: #76FF03;
 $deepOrange: #FF3D00;
 
 $bgColor: #f6f7f8;
+$borderColor: #eaeeef;
 
 .red { color: $red; }
 .green { color: $green; }
@@ -127,4 +128,5 @@ $bgColor: #f6f7f8;
 .light-green { color: $lightGreen; }
 .deep-orange { color: $deepOrange; }
 
-.bg-color { color: $bgColor };
+.bg-color { color: $bgColor; }
+.border-color { color: $borderColor; }

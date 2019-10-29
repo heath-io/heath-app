@@ -15,6 +15,7 @@ const AppColor = {
   ddd: '#ddd',
   eee: '#eee',
   fff: '#fff',
+  borderColor: '#eaeeef',
 };
 
 export default AppColor;

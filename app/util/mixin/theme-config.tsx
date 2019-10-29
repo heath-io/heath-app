@@ -3,6 +3,7 @@ import { pink, blue } from '@material-ui/core/colors';
 
 import MuiPaperConfig from './mui-paper';
 import MuiButtonConfig from './mui-button';
+import MuiToolbarConfig from './mui-toolbar';
 // import AppColor from '@tool/app-color';
 
 // 自定义 material-ui 主题样式
@@ -27,6 +28,7 @@ const ThemeConfig = createMuiTheme({
   overrides: {
     ...MuiButtonConfig,
     ...MuiPaperConfig,
+    ...MuiToolbarConfig,
 
     // override MuiTab
     MuiTab: {
@@ -56,52 +58,6 @@ const ThemeConfig = createMuiTheme({
       },
     },
 
-    // override MuiBottomNavigation
-    MuiBottomNavigation: {
-      root: {
-        position: 'fixed',
-        width: '100%',
-        left: 0,
-        bottom: 0,
-        height: '50px',
-        borderTop: '1px solid #333',
-        backgroundColor: '#000',
-      },
-    },
-    MuiBottomNavigationAction: {
-      root: {
-        color: blue['100'],
-      },
-    },
-    MuiSvgIcon: {
-      root: {
-        width: '30px',
-        height: '30px',
-      },
-    },
-
-    // override MuiToolbar
-    MuiToolbar: {
-      regular: {
-        height: '50px',
-        minHeight: 'auto',
-        borderBottom: '1px solid #eee',
-        backgroundColor: '#000',
-      },
-    },
-    MuiIcon: {
-      root: {
-        width: 'auto',
-        height: 'auto',
-        fontSize: '30px',
-      },
-    },
-    MuiCardContent: {
-      root: {
-        color: '#fff',
-        backgroundColor: '#111',
-      },
-    },
   },
 });
 

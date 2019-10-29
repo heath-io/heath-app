@@ -20,7 +20,8 @@ const store = new Store();
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      width: '130px',
+      zIndex: 1,
+      width: '150px',
     },
   })
 );
