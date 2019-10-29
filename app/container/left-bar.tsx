@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import { Paper, Button } from '@material-ui/core';
+import {
+  makeStyles,
+  Theme,
+  createStyles,
+} from '@material-ui/core/styles';
 
 import Store from '@store/common/left-bar';
 
@@ -12,14 +17,24 @@ interface IState {};
 
 const store = new Store();
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    paperRoot: {
+      width: '130px',
+    },
+  })
+);
+
 const LeftBar = (props: IProps, state: IState) => {
 
   useEffect(() => {
     console.log('enter...');
   }, []);
 
+  const classes = useStyles();
   return (
-    <Paper square={true}>
+    <Paper square={true}
+      className={classes.paperRoot}>
       <p>Hello: {store.count}</p>
       <p>Count: 11</p>
       <p>

@@ -8,7 +8,7 @@ interface IState {};
 const AppRoot = (props: IProps, state: IState) => {
 
   useEffect(() => {
-    console.log('hi');
+    // console.log('root...');
   }, []);
 
   return (

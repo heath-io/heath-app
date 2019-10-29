@@ -85,7 +85,7 @@ const ThemeConfig = createMuiTheme({
       regular: {
         height: '50px',
         minHeight: 'auto',
-        borderBottom: '1px solid #333',
+        borderBottom: '1px solid #eee',
         backgroundColor: '#000',
       },
     },

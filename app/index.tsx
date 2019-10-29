@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { AppContainer } from 'react-hot-loader';
+// import { AppContainer } from 'react-hot-loader';
 
 import AppTheme from '@con/app-theme';
 
@@ -13,9 +13,7 @@ const client = new ApolloClient({
 
 render(
   <ApolloProvider client={client}>
-    <AppContainer>
-      <AppTheme />
-    </AppContainer>
+    <AppTheme />
   </ApolloProvider>,
   document.getElementById('root'),
 );
@@ -27,9 +25,7 @@ if (module.hot) {
     const AppTheme = require('@con/app-theme').default;
     render(
       <ApolloProvider client={client}>
-        <AppContainer>
-          <AppTheme />
-        </AppContainer>
+        <AppTheme />
       </ApolloProvider>,
       document.getElementById('root'),
     );
