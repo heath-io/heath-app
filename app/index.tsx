@@ -1,13 +1,22 @@
 import React from 'react';
 import { render } from 'react-dom';
+import ApolloClient, { InMemoryCache } from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { AppContainer } from 'react-hot-loader';
 
 import AppTheme from '@con/app-theme';
 
+const client = new ApolloClient({
+  uri: 'http://47.103.144.70:5000/graphql',
+  cache: new InMemoryCache(),
+});
+
 render(
-  <AppContainer>
-    <AppTheme />
-  </AppContainer>,
+  <ApolloProvider client={client}>
+    <AppContainer>
+      <AppTheme />
+    </AppContainer>
+  </ApolloProvider>,
   document.getElementById('root'),
 );
 
@@ -17,9 +26,11 @@ if (module.hot) {
   module.hot.accept('@con/app-theme', () => {
     const AppTheme = require('@con/app-theme').default;
     render(
-      <AppContainer>
-        <AppTheme />
-      </AppContainer>,
+      <ApolloProvider client={client}>
+        <AppContainer>
+          <AppTheme />
+        </AppContainer>
+      </ApolloProvider>,
       document.getElementById('root'),
     );
   });

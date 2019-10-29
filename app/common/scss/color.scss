@@ -64,6 +64,8 @@ $amTeal: #009688;
 $lightGreen: #76FF03;
 $deepOrange: #FF3D00;
 
+$bgColor: #f6f7f8;
+
 .red { color: $red; }
 .green { color: $green; }
 .blue { color: $blue; }
@@ -124,3 +126,5 @@ $deepOrange: #FF3D00;
 .am-teal { color: $amTeal; }
 .light-green { color: $lightGreen; }
 .deep-orange { color: $deepOrange; }
+
+.bg-color { color: $bgColor };
