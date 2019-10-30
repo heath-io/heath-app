@@ -23,6 +23,14 @@
     "no-unused-expression": false
   },
   "jsRules": {
-    "object-literal-sort-keys": [false]
+    "no-empty-interface": false,
+    "ordered-imports": [false],
+    "object-literal-sort-keys": [false],
+    "no-console": [ false ],
+    "no-shadowed-variable": false,
+    "label-position": false,
+    "no-string-literal": false,
+    "jsx-no-lambda": false,
+    "no-unused-expression": false
   }
 }

@@ -8,7 +8,7 @@ import {
   createStyles,
 } from '@material-ui/core/styles';
 
-import List from './list';
+import AppLayer from '@con/app-layer';
 
 interface IProps extends RouteComponentProps {
   history: any,
@@ -18,14 +18,12 @@ interface IState {};
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paperRoot: {
-      height: '100vh',
-      padding: '66px 10px 10px 10px',
       backgroundColor: '#fff',
     },
   })
 );
 
-const Content = (props: IProps, state: IState) => {
+const My = (props: IProps, state: IState) => {
 
   useEffect(() => {
     // console.log('props: ', props);
@@ -37,21 +35,15 @@ const Content = (props: IProps, state: IState) => {
 
   const classes = useStyles();
   return (
-    <Paper square={true}
-      className={classes.paperRoot}>
-
-      <List title="推荐视频" />
-      <List title="时下流行" />
-      <List title="VIP会员" />
-      <List title="综艺" />
-      <List title="动漫" />
-      <List title="游戏" />
-      <List title="短视频" />
-      <List title="体育" />
-      <List title="健身" />
-      <List title="微电影" />
-    </Paper>
+    <AppLayer>
+      <Paper square={true}
+        className={classes.paperRoot}>
+        <p>My</p>
+        <p>My</p>
+        <p>My</p>
+      </Paper>
+    </AppLayer>
   )
 }
 
-export default withRouter(observer(Content));
+export default withRouter(observer(My));

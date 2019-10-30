@@ -1,4 +1,4 @@
-import electron from 'electron';
+// import electron from 'electron';
 import React, { useEffect } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { observer } from 'mobx-react';
@@ -71,6 +71,24 @@ const images = [
     uri: `${AppTool.serverImage}55.jpg`,
     duration: '03:07',
   },
+  {
+    id: 6,
+    title: '06.mp4',
+    uri: `${AppTool.serverImage}66.jpg`,
+    duration: '03:24',
+  },
+  {
+    id: 7,
+    title: '07.mp4',
+    uri: `${AppTool.serverImage}77.jpg`,
+    duration: '01:20',
+  },
+  {
+    id: 8,
+    title: '08.mp4',
+    uri: `${AppTool.serverImage}88.jpg`,
+    duration: '01:31',
+  },
 ];
 
 const List = (props: IProps, state: IState) => {
@@ -86,33 +104,10 @@ const List = (props: IProps, state: IState) => {
   }, []);
 
   const onPlay = (title: string) => {
-    console.log('play');
-
-    const BrowserWindow = electron.remote.BrowserWindow;
-    const playWindow = new BrowserWindow({
-      width: 1024,
-      height: 728,
-      minWidth: 800,
-      minHeight: 600,
-      backgroundColor: '#eee',
-    });
-
-    playWindow.webContents.on('did-finish-load', () => {
-      if (!playWindow) {
-        throw new Error(`"playWindow" is not defined`);
-      }
-      if (process.env.START_MINIMIZED) {
-        playWindow.minimize();
-      } else {
-        playWindow.show();
-        playWindow.focus();
-      }
-    });
-    playWindow.loadURL(`${AppTool.serverVideo}${title}`);
-
-    playWindow.on('close', () => {
-      console.log('close play window.');
-    });
+    // console.log('play');
+    // 创建一个新窗口 - 播放视频
+    const uri = `${AppTool.serverVideo}${title}`;
+    AppTool.createWindow(uri);
   }
 
   return (

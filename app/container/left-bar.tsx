@@ -36,28 +36,59 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+const list = [
+  {
+    id: 1,
+    routeName: '',
+    type: 'primary',
+    title: '首页',
+  },
+  {
+    id: 2,
+    routeName: 'video',
+    type: 'secondary',
+    title: '视频',
+  },
+  {
+    id: 3,
+    routeName: 'album',
+    type: 'primary',
+    title: '相册',
+  },
+  {
+    id: 4,
+    routeName: 'setting',
+    type: 'secondary',
+    title: '设置',
+  },
+];
+
 const LeftBar = (props: IProps, state: IState) => {
+  const { history } = props;
+  const classes = useStyles();
 
   useEffect(() => {
-    console.log('enter...');
+    // console.log('enter...');
   }, []);
 
-  const classes = useStyles();
+  const onPage = (routeName: string) => {
+    history.push(`/${routeName}`);
+  }
+
   return (
     <Paper square={true}
       className={classes.paperRoot}>
-      <p>Hello: {store.count}</p>
+
+      {list.map(item => (
+        // @ts-ignore
+        <Button variant="contained" key={item.id} color={item.type}
+          onClick={() => onPage(item.routeName)}
+          className={classes.buttonRoot}>{item.title}</Button>
+      ))}
+
       <Button variant="contained" color="primary"
         onClick={store.increment}
-        className={classes.buttonRoot}>首页
-      </Button>
-      <Button variant="contained" color="secondary"
-        onClick={store.decrement}
-        className={classes.buttonRoot}>视频
-      </Button>
-      <Button variant="contained" color="primary"
-        onClick={store.increment}
-        className={classes.buttonRoot}>相册
+        className={classes.buttonRoot}>收藏
       </Button>
       <Button variant="contained" color="secondary"
         onClick={store.decrement}
@@ -71,14 +102,9 @@ const LeftBar = (props: IProps, state: IState) => {
         onClick={store.decrement}
         className={classes.buttonRoot}>历史记录
       </Button>
-      <Button variant="contained" color="primary"
-        onClick={store.increment}
-        className={classes.buttonRoot}>收藏
-      </Button>
-      <Button variant="contained" color="secondary"
-        onClick={store.decrement}
-        className={classes.buttonRoot}>设置
-      </Button>
+
+      <p style={{marginTop: '15px',}}>Hello: {store.count}</p>
+
     </Paper>
   )
 }
