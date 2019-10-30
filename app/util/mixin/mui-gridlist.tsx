@@ -16,6 +16,11 @@ const MuiGridListConfig: IConfig = {
       width: '210px !important',
       height: '130px !important',
     },
+    tile: {
+      '&>img': {
+        cursor: 'pointer',
+      },
+    },
   },
   MuiGridListTileBar: {
     root: {

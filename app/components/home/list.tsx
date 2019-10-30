@@ -1,3 +1,4 @@
+import electron from 'electron';
 import React, { useEffect } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { observer } from 'mobx-react';
@@ -42,31 +43,31 @@ const useStyles = makeStyles((theme: Theme) =>
 const images = [
   {
     id: 1,
-    title: '11.jpg',
+    title: '01.mp4',
     uri: `${AppTool.serverImage}11.jpg`,
     duration: '05:52',
   },
   {
     id: 2,
-    title: '22.jpg',
+    title: '02.mp4',
     uri: `${AppTool.serverImage}22.jpg`,
     duration: '01:25',
   },
   {
     id: 3,
-    title: '33.jpg',
+    title: '03.mp4',
     uri: `${AppTool.serverImage}33.jpg`,
     duration: '03:07',
   },
   {
     id: 4,
-    title: '44.jpg',
+    title: '04.mp4',
     uri: `${AppTool.serverImage}44.jpg`,
     duration: '02:06',
   },
   {
     id: 5,
-    title: '55.jpg',
+    title: '05.mp4',
     uri: `${AppTool.serverImage}55.jpg`,
     duration: '03:07',
   },
@@ -84,6 +85,36 @@ const List = (props: IProps, state: IState) => {
     };
   }, []);
 
+  const onPlay = (title: string) => {
+    console.log('play');
+
+    const BrowserWindow = electron.remote.BrowserWindow;
+    const playWindow = new BrowserWindow({
+      width: 1024,
+      height: 728,
+      minWidth: 800,
+      minHeight: 600,
+      backgroundColor: '#eee',
+    });
+
+    playWindow.webContents.on('did-finish-load', () => {
+      if (!playWindow) {
+        throw new Error(`"playWindow" is not defined`);
+      }
+      if (process.env.START_MINIMIZED) {
+        playWindow.minimize();
+      } else {
+        playWindow.show();
+        playWindow.focus();
+      }
+    });
+    playWindow.loadURL(`${AppTool.serverVideo}${title}`);
+
+    playWindow.on('close', () => {
+      console.log('close play window.');
+    });
+  }
+
   return (
     <Paper square={true}
       className={classes.paperRoot}>
@@ -93,7 +124,8 @@ const List = (props: IProps, state: IState) => {
       <GridList>
         {images.map(item => (
           <GridListTile key={item.id}>
-            <img src={item.uri} alt={item.title} />
+            <img src={item.uri} alt={item.title}
+              onClick={() => onPlay(item.title)} />
             <GridListTileBar
               title={item.duration}
               actionIcon={
