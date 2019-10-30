@@ -4,6 +4,7 @@ import { pink, blue } from '@material-ui/core/colors';
 import MuiPaperConfig from './mui-paper';
 import MuiButtonConfig from './mui-button';
 import MuiAppBarConfig from './mui-appbar';
+import MuiGridListConfig from './mui-gridlist';
 // import AppColor from '@tool/app-color';
 
 // 自定义 material-ui 主题样式
@@ -29,6 +30,16 @@ const ThemeConfig = createMuiTheme({
     ...MuiButtonConfig,
     ...MuiPaperConfig,
     ...MuiAppBarConfig,
+    ...MuiGridListConfig,
+
+    // override MuiTypography
+    MuiTypography: {
+      h6: {
+        marginBottom: '5px',
+        fontSize: '16px',
+        fontWeight: 500,
+      },
+    },
   },
 });
 

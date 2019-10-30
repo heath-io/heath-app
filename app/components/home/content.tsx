@@ -8,9 +8,6 @@ import {
   createStyles,
 } from '@material-ui/core/styles';
 
-// import Gallery from './gallery';
-// import Slick from './slick';
-import ImageFlow from './image-flow';
 import List from './list';
 
 interface IProps extends RouteComponentProps {
@@ -43,10 +40,16 @@ const Content = (props: IProps, state: IState) => {
     <Paper square={true}
       className={classes.paperRoot}>
 
-      {/* <Gallery /> */}
-      {/* <Slick /> */}
-      <ImageFlow />
-      <List />
+      <List title="推荐视频" />
+      <List title="时下流行" />
+      <List title="VIP会员" />
+      <List title="综艺" />
+      <List title="动漫" />
+      <List title="游戏" />
+      <List title="短视频" />
+      <List title="体育" />
+      <List title="健身" />
+      <List title="微电影" />
     </Paper>
   )
 }
