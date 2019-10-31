@@ -75,13 +75,13 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     // show: false,
-    width: 1024,
-    height: 728,
+    width: 1300,
+    height: 800,
     minWidth: 800,
     minHeight: 600,
     webPreferences: {
       nodeIntegration: true,
-      experimentalFeatures: true,
+      // experimentalFeatures: true,
     },
     title: 'Heath',
     backgroundColor: '#eee',

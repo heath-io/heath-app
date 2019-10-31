@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
     contentRoot: {
       height: '100vh',
       padding: '66px 10px 10px 10px',
+      overflow: 'auto',
       backgroundColor: '#fff',
     },
   })

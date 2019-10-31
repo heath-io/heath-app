@@ -15,6 +15,7 @@ const MuiGridListConfig: IConfig = {
     root: {
       width: '210px !important',
       height: '130px !important',
+      marginTop: '10px',
     },
     tile: {
       '&>img': {

@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core/styles';
 
 import AppLayer from '@con/app-layer';
+import List from './list';
 
 interface IProps extends RouteComponentProps {
   history: any,
@@ -17,6 +18,9 @@ interface IState {};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    layerRoot: {
+      overflow: 'auto',
+    },
     paperRoot: {
       backgroundColor: '#fff',
     },
@@ -38,8 +42,7 @@ const Album = (props: IProps, state: IState) => {
     <AppLayer>
       <Paper square={true}
         className={classes.paperRoot}>
-        <p>Album</p>
-        <p>Album</p>
+        <List />
       </Paper>
     </AppLayer>
   )
